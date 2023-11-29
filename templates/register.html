@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/register.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href={% static 'assets/css/owl.theme.css' %}>
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+</head>
+<body>
+{% csrf_token %}
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-180">
+    <div class="row justify-content-center align-items-center h-120">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-4">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <form method="post">
+                {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" />
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="lastName" name="lastName"  class="form-control form-control-lg" />
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 ">
+
+                  <div class="form-outline ">
+                    <input type="text" name="company" class="form-control form-control-lg" id="company" />
+                    <label for="company" class="form-label">Company name</label>
+                  </div>
+                      <div class="form-outline">
+                    <input type="password" name="password" id="password" class="form-control form-control-lg" />
+                    <label class="form-label" for="password">Password</label>
+                  </div>
+
+                </div>
+                </div>
+
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="email" id="emailAddress" name="emailAddress" class="form-control form-control-lg" />
+                    <label class="form-label" for="emailAddress">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg" />
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-12">
+
+                  <select class="select form-control-lg">
+                    <option value="1" disabled>Choose option</option>
+                    <option value="2">Startup </option>
+                    <option value="3">Growth</option>
+                    <option value="4">Maturity</option>
+                  </select>
+                  <label class="form-label select-label">Select Company level</label>
+
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2 justify-content-center align-items-center" >
+                <input class="btn-block btn-color" type="submit" value="Submit" />
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

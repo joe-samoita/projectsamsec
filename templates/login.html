@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href={% static 'assets/css/owl.theme.css' %}>
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+</head>
+<body>
+<div class="container px-4 py-5 mx-auto">
+    <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+            <div class="card card1">
+                <div class="row justify-content-center my-auto">
+                    <div class="col-md-8 col-10 my-5">
+                        <div class="row justify-content-center px-3 mb-3">
+                            <img id="logo" src="{% static 'assets/img/logo.png' %}">
+                        </div>
+                        <h3 class="mb-5 text-center heading">We are Samsec</h3>
+
+                        <h6 class="msg-info">Please login to your account</h6>
+                        <form action="/index/" method="post">
+                            {% csrf_token %}
+                        <div class="form-group">
+                            <label  class="form-control-label text-muted">Email</label>
+                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-control-label text-muted">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+                        </div>
+
+                        <div class="row justify-content-center my-3 px-3">
+                            <input  type="submit" value="Submit"  class="btn-block btn-color" >
+                        </div>
+                         </form>
+                        <div class="row justify-content-center my-2">
+                            <a href="#"><small class="text-muted">Forgot Password?</small></a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="header-button">
+                  <a href="{% url 'register' %}" class="btn btn-common">Create Account</a>
+                  <a href="#" class="btn btn-border video-popup">Learn More</a>
+                </div>
+            </div>
+            <div class="card card2">
+                <div class="my-auto mx-md-5 px-md-5 right">
+                    <h3 class="text-white">We are more than just a company</h3>
+                    <small class="text-white">We are a support system helping startup & established companies grow.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
